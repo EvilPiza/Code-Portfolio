@@ -24,6 +24,8 @@
             color: transparent;
             animation: gradient 5s ease infinite;
             background-size: 300% 300%;
+            padding-top: 5px;
+            padding-bottom: 5px;   /* fixes cutoff, took me 10 minutes lmao */
         }
         
         @keyframes gradient {
@@ -35,9 +37,9 @@
         /* Floating animation */
         @keyframes floatXY {
             0%   { transform: translate(0px, 0px); }
-            25%  { transform: translate(10px, -10px); }
-            50%  { transform: translate(0px, -20px); }
-            75%  { transform: translate(-10px, -10px); }
+            25%  { transform: translate(30px, -30px); }
+            50%  { transform: translate(0px, -60px); }
+            75%  { transform: translate(-30px, -30px); }
             100% { transform: translate(0px, 0px); }
         }
         
@@ -60,7 +62,7 @@
         .typewriter-name {
             display: inline-block;
             border-right: 2px solid #dc2626;
-            white-space: nowrap;
+            white-space: wrap;
             overflow: hidden;
             letter-spacing: 1px;
             animation: blink-caret 0.75s step-end infinite;
@@ -119,8 +121,8 @@
         }
         
         .skill-icon:hover {
-            transform: scale(1.1) rotateY(180deg);
-            box-shadow: 0 0 20px rgba(220, 38, 38, 0.7);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.25);
         }
         
         /* Fade-in animation */
@@ -147,7 +149,7 @@
         }
         
         .glow:hover {
-            box-shadow: 0 0 30px rgba(220, 38, 38, 1);
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
             transform: scale(1.05);
         }
         
@@ -168,13 +170,8 @@
         
         .contact-box {
             flex: 0 1 300px;
-            transition: all 0.5s ease;
         }
-        
-        .contact-box:hover {
-            transform: translateY(-10px) scale(1.03);
-        }
-        
+
         /* Discord icon */
         .discord-icon {
             color: #5865F2;
@@ -259,9 +256,10 @@
         }
         
         .shake:hover {
-            animation: shake 0.5s;
+            animation: shake 0.3s;
         }
-        
+
+        /*
         .section-divider {
             position: relative;
             height: 90px;
@@ -284,41 +282,12 @@
             0%   { background-position-x: 0; }
             100% { background-position-x: 1200px; }
         }
+        */
+        /* Might add back a divider someday */
         
-        /* Particle background */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            background-color: rgba(220, 38, 38, 0.5);
-            border-radius: 50%;
-            animation: particleAnimation linear infinite;
-        }
-        
-        @keyframes particleAnimation {
-            0% {
-                transform: translateY(0) translateX(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-1000px) translateX(1000px);
-                opacity: 0;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Particle background -->
-    <div class="particles" id="particles"></div>
-    
     <!-- Navigation -->
     <nav class="fixed w-full bg-black bg-opacity-90 z-50 border-b border-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -336,13 +305,6 @@
                         <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                     </div>
                 </div>
-                <div class="md:hidden">
-                    <button class="mobile-menu-button text-gray-400 hover:text-white focus:outline-none">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
@@ -351,7 +313,7 @@
     <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 pt-16 animated-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <div class="fade-in">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 hero-text floating-xy">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 hero-text floating-xy">
                     Hello, I'm <span id="typewriter" class="typewriter-name"></span>
                 </h1>
 
@@ -546,17 +508,6 @@
                 <div class="mb-6 md:mb-0">
                     <span class="text-white font-bold text-xl shake">EvilPiza<span class="text-red-600"> / <span class="text-white font-bold text-xl">Blox</span></span></span>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="https://github.com/EvilPiza" target="_blank" class="text-gray-400 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-red-600 transition duration-300 transform hover:scale-125">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
             </div>
             <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
                 <p class="text-gray-400 text-sm">&copy; 2025 EvilPiza. All rights reserved.</p>
@@ -570,35 +521,6 @@
     </footer>
 
     <script>
-        // Create particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random size between 2px and 5px
-                const size = Math.random() * 3 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Random position
-                particle.style.left = `${Math.random() * 100}%`;
-                particle.style.top = `${Math.random() * 100}%`;
-                
-                // Random animation duration between 10s and 20s
-                const duration = Math.random() * 10 + 10;
-                particle.style.animationDuration = `${duration}s`;
-                
-                // Random delay
-                particle.style.animationDelay = `${Math.random() * 5}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
         // Fetch GitHub repositories
         async function fetchGitHubRepos() {
             try {
@@ -631,7 +553,7 @@
                     description = description.replace(/:[a-z_]+:/g, '');
                     
                     repoCard.innerHTML = `
-                        <div class="bg-gray-800 rounded-lg overflow-hidden h-full card-hover border border-gray-700 hover:border-red-600 transition duration-300 glow">
+                        <div class="bg-gray-800 rounded-lg overflow-hidden h-full card-hover border border-gray-700 transition duration-300 glow">
                             <div class="p-6 h-full flex flex-col">
                                 <div class="flex items-center mb-4">
                                     <i class="fab fa-github text-red-600 mr-3 text-xl"></i>
@@ -689,7 +611,6 @@
         
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
             fetchGitHubRepos();
             
             // Smooth scrolling for navigation links
@@ -787,7 +708,7 @@
         const quotes = [
             "If I had infinite money I would destroy my monitor with the rage Java has bestowed upon me, that of a thousand suns.",
             "Man, I used to be team C# in the great Java vs C# debate but honestly, Python solos both.",
-            "Everyone talkin bout Polinex and Nebula, but Cobalt gonna solo both 100%.",
+            "Everyone talkin' bout Polinex and Nebula, but Cobalt gonna solo both 100%.",
             "Life, is osu!",
             "A wise man once asked me, 'best esports style fps game?' I arrogantly responded, 'Valorant ofc!' I was then violently beaten to death.",
             "I would learn C++, Rust, and Haskell but im 300 iq points below the required amount :(",
