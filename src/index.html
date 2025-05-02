@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="icon.png" sizes="32x32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poligon more like Poligoat</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black bg-opacity-90 z-50 border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-white font-bold text-xl shake">EvilPiza<span class="text-red-600"> / <span class="text-white font-bold text-xl">Blox</span></span></span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#projects" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#contact" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-black to-gray-900 pt-16 animated-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-4xl font-bold mb-6 hero-text floating-xy">
+                    Hello, I'm <span id="typewriter" class="typewriter-name"></span>
+                </h1>
+
+                <p class="text-xl md:text-xl text-gray-300 mb-8 fade-in delay-1 typewriter">Backend Developer & Python Nerd</p>
+                <div class="flex justify-center space-x-4 fade-in delay-2"></div>
+            </div>
+            <div class="mt-16 fade-in delay-3">
+                <a href="#about" class="text-gray-400 hover:text-red-600 inline-block bounce">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave divider -->
+    <div class="section-divider">
+        <div class="wave"></div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">About <span class="text-red-600">Me</span></h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6 fade-in delay-1"></div>
+                <p class="text-gray-400 max-w-3xl mx-auto fade-in delay-2">I'm a lazy developer who likes contributing to random repos that interest me.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in delay-1">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gray-800 rounded-lg overflow-hidden glow">
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center p-6">
+                                    <h3 class="text-2xl font-bold text-white mb-2">Wise quote generator</h3>
+                                    <span id="quote-typewriter" class="quote-typewriter"></span>
+                                    <div class="flex justify-center space-x-4">
+                                        <a href="https://github.com/EvilPiza" target="_blank" class="text-gray-300 hover:text-red-600 transition duration-300 transform hover:scale-125">
+                                            <i class="fab fa-github text-2xl"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in delay-2">
+                    <h3 class="text-2xl font-bold text-white mb-6">My <span class="text-red-600">Skills</span></h3>
+                    <p class="text-gray-400 mb-8">I am constantly learning new stuff to be a 10x developer before I turn 90:</p>
+                    
+                    <div class="skills-grid">
+                        <!-- JavaScript -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fab fa-js text-yellow-400 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">JavaScript</span>
+                        </div>
+                        
+                        <!-- Java -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fab fa-java text-red-500 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">Java</span>
+                        </div>
+                        
+                        <!-- C -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fas fa-copyright text-blue-400 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">C</span>
+                        </div>
+                        
+                        <!-- Python -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fab fa-python text-blue-500 text-2xl pulse"></i>
+                            </div>
+                            <span class="text-gray-300">Python</span>
+                        </div>
+                        
+                        <!-- Go -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fab fa-golang text-blue-300 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">Go</span>
+                        </div>
+                        
+                        <!-- Git -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fab fa-git-alt text-orange-600 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">Git</span>
+                        </div>
+                        
+                        <!-- Database -->
+                        <div class="text-center">
+                            <div class="skill-icon mb-2">
+                                <i class="fas fa-database text-blue-400 text-2xl"></i>
+                            </div>
+                            <span class="text-gray-300">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#contact" class="inline-flex items-center text-red-600 hover:text-red-500 transition duration-300 transform hover:scale-105">
+                            <span>Get in touch</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave divider -->
+    <div class="section-divider">
+        <div class="wave"></div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">My <span class="text-red-600">Projects</span></h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto mb-6 fade-in delay-1"></div>
+                <p class="text-gray-400 max-w-3xl mx-auto fade-in delay-2">Here are some of my latest GitHub repos. Click on any project to see the trashy code.</p>
+            </div>
+            
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded here by JavaScript -->
+                <div class="text-center py-8">
+                    <div class="animate-spin inline-block text-red-600">
+                        <i class="fas fa-circle-notch text-4xl"></i>
+                    </div>
+                    <p class="mt-4 text-gray-400">Loading projects...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave divider -->
+    <div class="section-divider">
+        <div class="wave"></div>
+    </div>
+
+<!-- Got inspiration from Nebula section with this btw! -->
+<section id="contact" class="py-20 bg-black relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fade-in">Get In <span class="text-red-600">Touch</span></h2>
+            <div class="w-20 h-1 bg-red-600 mx-auto mb-6 fade-in delay-1"></div>
+            <p class="text-gray-400 max-w-3xl mx-auto fade-in delay-2">Have a project in mind or want to collaborate? Hit me up on discord!</p>
+        </div>
+
+        <!-- Discord Profile Card -->
+        <div class="max-w-2xl mx-auto fade-in delay-1 relative group">
+            <div class="relative glow rounded-xl">
+
+                <!-- Banner -->
+                <div id="banner" class="h-48 md:h-56 w-full rounded-t-xl overflow-hidden border-t border-x border-gray-800 relative">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
+                </div>
+
+                <!-- Profile Picture -->
+                <div id="pfp" class="absolute left-1/2 transform -translate-x-1/2 -translate-y-[50%] transition-transform duration-300">
+                </div>
+
+                <!-- Contact Info Box -->
+                <div class="bg-gray-900 rounded-b-xl p-6 border-b border-x border-gray-800">
+                    <div class="text-center pt-16">
+                        <h3 class="text-2xl font-bold text-white mb-2">EvilPiza / Blox</h3>
+                        <p class="text-gray-400 mb-6">Full time weeb and Professional gooner</p>
+                        
+                        <div class="flex justify-center space-x-8">
+                            <!-- Discord -->
+                            <div class="text-gray-300 hover:text-[#5865F2] transition duration-300 transform hover:scale-105">
+                                <i class="fab fa-discord text-3xl"></i>
+                                <p class="text-sm mt-2">@Bloxfriend590</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-white font-bold text-xl shake">EvilPiza<span class="text-red-600"> / <span class="text-white font-bold text-xl">Blox</span></span></span>
+                </div>
+            </div>
+            <div id="latest-commit">Loading latest commit...</div>
+            <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-gray-400 text-sm">&copy; 2025 EvilPiza. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#home" class="text-gray-400 hover:text-red-600 text-sm transition duration-300 transform hover:scale-105">
+                        Back to top <i class="fas fa-arrow-up ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script src="scripts/commit-fetcher.js"></script>
+<script src="scripts/herotext-handler.js"></script>
+<script src="scripts/pfp_and_banner-fetcher.js"></script>
+<script src="scripts/quote-handler.js"></script>
+<script src="scripts/repo-fetcher.js"></script>
+</body>
+</html>

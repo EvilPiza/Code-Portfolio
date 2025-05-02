@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #0a0a0a;
+	color: #f5f5f5;
+	overflow-x: hidden;
+}
+
+/* Hero text gradient animation */
+.hero-text {
+	background: linear-gradient(90deg, #f5f5f5, #dc2626, #f5f5f5);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradient 5s ease infinite;
+	background-size: 300% 300%;
+	padding-top: 20px;
+	padding-bottom: 20px;   /* fixes cutoff, took me 10 minutes lmao */
+	white-space: wrap;
+}
+
+@keyframes gradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Floating animation */
+@keyframes floatXY {
+	0%   { transform: translate(0px, 0px); }
+	25%  { transform: translate(30px, -30px); }
+	50%  { transform: translate(0px, -60px); }
+	75%  { transform: translate(-30px, -30px); }
+	100% { transform: translate(0px, 0px); }
+}
+
+.floating-xy {
+	animation: floatXY 8s ease-in-out infinite, gradient 5s ease infinite;
+}
+
+/* Card hover effect */
+.card-hover {
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+}
+
+.card-hover:hover {
+	transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+	box-shadow: 0 20px 40px rgba(220, 38, 38, 0.6);
+}
+
+/* Typewriter effect */
+.typewriter-name {
+	display: inline-block;
+	border-right: 2px solid #dc2626;
+	white-space: wrap;
+	overflow: visible;
+	letter-spacing: 1px;
+	animation: blink-caret 0.75s step-end infinite;
+	line-height: 0.7;
+}
+
+.quote-typewriter {
+	display: inline;
+	border-right: 2px solid #dc2626;
+	letter-spacing: 1px;
+	animation: blink-caret 0.75s step-end infinite;
+	word-break: break-word;
+	white-space: normal;
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #dc2626; }
+}
+
+
+/* Navigation link animation */
+.nav-link {
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.nav-link::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -2px;
+	left: 0;
+	background-color: #dc2626;
+	transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+	width: 100%;
+}
+
+/* Skill icon animation */
+.skill-icon {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #262626;
+	border-radius: 50%;
+	margin: 0 auto;
+	transition: all 0.3s ease;
+	transform-style: preserve-3d;
+}
+
+.skill-icon:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 20px rgba(220, 38, 38, 0.25);
+}
+
+/* Fade-in animation */
+.fade-in {
+	opacity: 0;
+	animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+	to { opacity: 1; }
+}
+
+/* Delay classes */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+/* Glow effect */
+.glow {
+	box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+	transition: all 0.3s ease;
+}
+
+.glow:hover {
+	box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+	transform: scale(1.05);
+}
+
+/* Skills grid */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	gap: 20px;
+}
+
+/* Contact boxes */
+.contact-boxes {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+.contact-box {
+	flex: 0 1 300px;
+}
+
+/* Discord icon */
+.discord-icon {
+	color: #5865F2;
+	transition: all 0.3s ease;
+}
+
+/* Animated background */
+.animated-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.animated-bg::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	right: -50%;
+	bottom: -50%;
+	background: linear-gradient(
+		to bottom right,
+		rgba(220, 38, 38, 0.1),
+		rgba(220, 38, 38, 0.05),
+		transparent
+	);
+	transform: rotate(30deg);
+	animation: bgAnimation 15s linear infinite;
+	z-index: -1;
+}
+
+@keyframes bgAnimation {
+	0% { transform: rotate(0deg) translateX(0) translateY(0); }
+	100% { transform: rotate(360deg) translateX(0) translateY(0); }
+}
+
+@keyframes typing {
+	from { width: 0 }
+	to { width: 100% }
+}
+
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #dc2626; }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.05); }
+	100% { transform: scale(1); }
+}
+
+.pulse {
+	animation: pulse 2s infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-20px); }
+}
+
+.bounce {
+	animation: bounce 2s infinite;
+}
+
+/* Rotate animation */
+@keyframes rotate {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.rotate {
+	animation: rotate 10s linear infinite;
+}
+
+/* Shake animation */
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+	20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake:hover {
+	animation: shake 0.3s;
+}
+
+/*
+.section-divider {
+	position: relative;
+	height: 90px;
+	overflow: hidden;
+}
+
+.wave {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 100' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'><path d='M0,30 C150,80 350,0 600,30 C850,60 1050,0 1200,30 V100 H0 Z' fill='%23dc2626'/></svg>") repeat-x;
+	background-size: 1200px 100%;
+	animation: wave 5s linear infinite;
+	transform: rotate(180deg);
+}
+
+@keyframes wave {
+	0%   { background-position-x: 0; }
+	100% { background-position-x: 1200px; }
+}
+*/
+/* Might add back a divider someday */
