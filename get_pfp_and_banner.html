@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Avatar & Banner Viewer</title>
+</head>
+<body>
+  <h1>Discord Tool</h1>
+  <p>924380186609328199</p>
+  <input type="text" id="userId" placeholder="Enter Discord User ID">
+  <button onclick="getDiscordData()">Get Info</button>
+  <div id="result"></div>
+
+  <script>
+    async function getDiscordData() {
+      const userId = document.getElementById("userId").value;
+      const API_BASE = "https://discord-fetcher.onrender.com";
+      fetch(`${API_BASE}/discord/user/${userId}`)
+      .then(res => res.json())
+      .then(data => {
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "";
+
+      if (data.avatarUrl) {
+        resultDiv.innerHTML += "<h3>Avatar:</h3><img src='" + data.avatarUrl + "' width='256'>";
+      }
+
+      if (data.bannerUrl) {
+        resultDiv.innerHTML += "<h3>Banner:</h3><img src='" + data.bannerUrl + "' width='512'>";
+      }
+
+      if (!data.avatarUrl && !data.bannerUrl) {
+        resultDiv.innerHTML = "No avatar or banner found.";
+      }
+    });
+    }
+  </script>
+</body>
+</html>
