@@ -528,6 +528,7 @@
                     <span class="text-white font-bold text-xl shake">EvilPiza<span class="text-red-600"> / <span class="text-white font-bold text-xl">Blox</span></span></span>
                 </div>
             </div>
+            <div id="latest-commit">Loading latest commit...</div>
             <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between">
                 <p class="text-gray-400 text-sm">&copy; 2025 EvilPiza. All rights reserved.</p>
                 <div class="mt-4 md:mt-0">
@@ -784,6 +785,22 @@
         document.addEventListener("DOMContentLoaded", () => {
             typeQuote();
         });
+    </script>
+    <script>
+    fetch(`https://api.github.com/repos/EvilPiza/Code-Portfolio/commits/main`)
+    .then(response => response.json())
+    .then(data => {
+        const commit = data;
+        const commitDate = new Date(commit.commit.author.date).toLocaleString();
+        
+        document.getElementById("latest-commit").innerHTML = `
+        <p>Running Commit: <a href="${commit.html_url}" target="_blank">${commit.sha.slice(0, 7)}</a></p>
+        `;
+    })
+    .catch(error => {
+        console.error("Error fetching commit:", error);
+        document.getElementById("latest-commit").innerHTML = "Failed to load commit.";
+    });
     </script>
 </body>
 </html>
