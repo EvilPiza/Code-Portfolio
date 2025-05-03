@@ -41,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
 
-            if (data.user_name || true) {
+            if (data.username) {
                 usernameDiv.innerHTML = `
                 <i class="fab fa-discord text-3xl"></i>
-                <h1 class="text-2xl font-bold">@${data.user_name}</h1>`;
+                <h1 class="font-bold">@${data.username}</h1>`;
             }
 
             if (!data.avatarUrl && !data.bannerUrl) {
