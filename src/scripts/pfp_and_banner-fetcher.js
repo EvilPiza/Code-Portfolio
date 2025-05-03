@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hardcoding for life <3
     const userId = "924380186609328199";
 
-    // Fetch Discord user data
+    // fetches the goods
     fetch(`${API_BASE}/discord/user/${userId}`)
         .then(res => {
             if (!res.ok) {
@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return res.json();
         })
         .then(data => {
-            const pfpDiv = document.getElementById("pfp");
-            const bannerDiv = document.getElementById("banner");
+            const pfpDiv = document.getElementById("discord-pfp");
+            const bannerDiv = document.getElementById("discord-banner");
+            const usernameDiv = document.getElementById("discord-username");
 
             pfpDiv.innerHTML = "";
             bannerDiv.innerHTML = "";
-
+            usernameDiv.innerHTML = "";
+            
             if (data.avatarUrl) {
                 pfpDiv.innerHTML = `
                     <img
@@ -37,6 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         class="w-full h-full object-cover"
                     >
                 `;
+            }
+
+            if (data.user_name || true) {
+                usernameDiv.innerHTML = `
+                <i class="fab fa-discord text-3xl"></i>
+                <h1 class="text-2xl font-bold">@${data.user_name}</h1>`;
             }
 
             if (!data.avatarUrl && !data.bannerUrl) {
