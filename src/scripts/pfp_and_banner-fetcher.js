@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const API_BASE = "https://discord-fetcher.onrender.com";
 
-    // Example: Replace this with dynamic user ID input
-    const userId = "924380186609328199"; // Replace with the actual user ID
+    // Hardcoding for life <3
+    const userId = "924380186609328199";
 
     // Fetch Discord user data
     fetch(`${API_BASE}/discord/user/${userId}`)
@@ -16,11 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const pfpDiv = document.getElementById("pfp");
             const bannerDiv = document.getElementById("banner");
 
-            // Clear previous content
             pfpDiv.innerHTML = "";
             bannerDiv.innerHTML = "";
 
-            // Add avatar if available
             if (data.avatarUrl) {
                 pfpDiv.innerHTML = `
                     <img
@@ -31,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
 
-            // Add banner if available
             if (data.bannerUrl) {
                 bannerDiv.innerHTML = `
                     <img
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
 
-            // Handle case where neither avatar nor banner is available
             if (!data.avatarUrl && !data.bannerUrl) {
                 bannerDiv.innerHTML = "No avatar or banner found.";
             }

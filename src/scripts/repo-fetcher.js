@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animation on scroll
     const fadeElements = document.querySelectorAll('.fade-in');
     
     const fadeInObserver = new IntersectionObserver((entries) => {
@@ -120,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         fadeInObserver.observe(element);
     });
     
-    // Hide scroll indicator when at bottom of page
     window.addEventListener('scroll', function() {
         const scrollIndicator = document.querySelector('.scroll-indicator');
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
