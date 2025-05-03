@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const API_BASE = "https://discord-fetcher.onrender.com";
 
     // Hardcoding for life <3
-    const userId = "1182505210418053171";
+    const userId = "924380186609328199";
 
     // fetches the goods
     fetch(`${API_BASE}/discord/user/${userId}`)
